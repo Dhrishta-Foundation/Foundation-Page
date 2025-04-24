@@ -71,32 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Form Submission
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // Simple validation
-            if (!name || !email || !message) {
-                alert('Please fill in all fields');
-                return;
-            }
-            
-            // In a real application, you would send this data to a server
-            // For this demo, we'll just show a success message
-            alert(`Thank you, ${name}! Your message has been received. We'll get back to you soon.`);
-            
-            // Reset form
-            contactForm.reset();
-        });
-    }
-    
     // Enhanced animation on scroll
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.highlight, .director-card, .research-area, .research-impact-card, .involved-card, .section-title, .stats-item');
@@ -118,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Parallax effect for background sections
     const parallaxSections = document.querySelectorAll('.parallax-bg');
+    
     
     window.addEventListener('scroll', function() {
         parallaxSections.forEach(section => {
@@ -315,3 +290,54 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Send Email using EmailJS
+// Initialize EmailJS
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("GhJc_wDLWZWLjuKut"); // EmailJS Public Key
+});
+
+
+// Method to send email using EmailJS
+// Send email using EmailJS
+function setupEmailForm(formId) {
+    const form = document.getElementById(formId);
+    
+    if (form) {
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+
+            
+            // Simple validation
+            if (!name.value || !email.value || !message.value) {
+                alert('Please fill in all fields');
+                return;
+            }
+            formData = {
+                "name": name.value,
+                "email": email.value,
+                "message" : message.value
+            };
+            try {
+                // Send email using EmailJS
+                const response = await emailjs.send("service_mxwwcdn", "template_3puz5o9", formData);
+                console.log("Email sent successfully!", response);
+                alert("Message sent successfully");
+                name.value = "";
+                email.value = "";
+                message.value = "";
+        
+               
+        
+            } catch (error) {
+                console.error("Error sending email:", error);
+                alert("Error: please try later");
+            }
+        });
+    }
+}
+setupEmailForm('contactForm');
