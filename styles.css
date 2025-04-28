@@ -280,59 +280,69 @@ a {
 
 /* About Section */
 #about {
-  background: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+              url("Photos/bg_books.jpg") no-repeat center center/cover;
   background-attachment: fixed;
-  /* color: white; */
+  padding: 5rem 0;
 }
-.about-section-description {
-  position: relative;
-  padding-bottom: 15px;
-  margin-bottom: 40px;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
 
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
 }
+
+.about-section-description {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  color: #f0f0f0;
+}
+
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 3rem;
+  padding: 0 2rem;
 }
-.background h3{
+
+.background h3,
+.vision-mission h3 {
   color: var(--accent-color);
-  font-size: 2.1rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
 }
-.background p{
-  color: black;
+
+.background p,
+.vision-mission p {
+  color: #f5f5f5;
   font-size: 1.1rem;
+  line-height: 1.8;
 }
-.vision-mission h3{
-  color: var(--accent-color);
-  font-size: 2.1rem;
-}
-.vision-mission p{
-  color: #000;
-  font-size: 1.1rem;
-}
+
 .vision-mission ul {
   padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
 }
 
 .vision-mission ul li {
   position: relative;
   padding-left: 1.5rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
+  color: #f5f5f5;
+  line-height: 1.7;
 }
 
 .vision-mission ul li:before {
-  content: "•";
+  content: "✔️";
   color: var(--accent-color);
   font-weight: bold;
   position: absolute;
   left: 0;
 }
+
 
 /* Directors Section */
 .directors-grid {
@@ -526,6 +536,9 @@ to { opacity: 1; transform: scale(1); }
 
 .training-card:hover ul li {
   color: white;
+}
+.training-card:hover p{
+  color: var(--primary-color);
 }
 .training-card:hover .training-card-heading {
   color: #ff9933;
