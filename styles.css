@@ -205,7 +205,7 @@ a {
 /* Hero Section */
 .hero {
   min-height: calc(100vh - 80px);
-  background: linear-gradient(rgba(0, 179, 255, 0.7), rgba(1, 98, 130, 0.7)),url("Photos/bg_books.jpg")  no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Photos/bg_books.jpg")  no-repeat center center/cover;
   color: white;
   display: flex;
   align-items: center;
@@ -440,7 +440,96 @@ background-color: #222;
 from { opacity: 0; transform: scale(0.95); }
 to { opacity: 1; transform: scale(1); }
 }
+/* Training Section */
+#section.training-model {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+  background-attachment: fixed;
+  padding: 4rem 0;
+}
 
+.training-introduction,
+.training-introduction-detail {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.training-philosophy-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 4rem 0 2rem;
+  text-align: center;
+}
+
+.training-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Two columns on desktop, one on mobile */
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.training-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: all var(--transition-speed) ease;
+  transform: translateY(20px);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.training-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.training-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.training-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary-color);
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform var(--transition-speed) ease;
+}
+
+.training-card:hover:before {
+  transform: scaleY(1);
+}
+
+.training-card-heading {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  position: relative;
+  transition: color var(--transition-speed) ease;
+}
+
+.training-card ul {
+  list-style: disc inside;
+  position: relative;
+  transition: color var(--transition-speed) ease;
+}
+
+.training-card:hover ul li {
+  color: white;
+}
+.training-card:hover .training-card-heading {
+  color: #ff9933;
+}
 
 /* Research Section */
 #research {
@@ -579,14 +668,14 @@ transform: rotate(90deg);
 }
 
 @keyframes fadeIn {
-from {
-  opacity: 0;
-  transform: scale(0.95);
-}
-to {
-  opacity: 1;
-  transform: scale(1);
-}
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 /* research-impact Section */
 #research-impact {
@@ -615,8 +704,8 @@ overflow: hidden;
 }
 
 .research-impact-card.animate-in {
-opacity: 1;
-transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .research-impact-card:hover {

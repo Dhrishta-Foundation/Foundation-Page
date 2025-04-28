@@ -130,14 +130,15 @@ buttons.forEach(button => {
 });
 
 closeBtn.addEventListener('click', () => {
-modal.style.display = 'none';
+    modal.style.display = 'none';
 });
 
 window.addEventListener('click', (e) => {
-if (e.target === modal) {
-    modal.style.display = 'none';
-}
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
 });
+
 
 // Research Data
 const researchData = [
