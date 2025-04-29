@@ -6,7 +6,7 @@
   --text-color: #333;
   --light-text: #f8f9fa;
   --border-color: #e1e1e1;
-  --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  --shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
   --transition-speed: 0.4s;
 }
 
@@ -463,23 +463,29 @@ to { opacity: 1; transform: scale(1); }
   margin: 4rem 0 2rem;
   text-align: center;
 }
-
+.training-philosophy-title:hover{
+  color: var(--accent-color);
+}
 .training-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Two columns on desktop, one on mobile */
   gap: 2rem;
   margin-bottom: 2rem;
 }
-
+.training-philosophy-title-div{
+  display: grid;
+  grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
 .training-card {
   background-color: white;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: var(--shadow);
-  transition: all var(--transition-speed) ease;
+  transition: all 0.2s ease;
   transform: translateY(20px);
   position: relative;
-  z-index: 1;
   overflow: hidden;
 }
 
@@ -489,26 +495,10 @@ to { opacity: 1; transform: scale(1); }
 }
 
 .training-card:hover {
-  transform: translateY(-10px) scale(1.03);
+  /* transform: translateY(1px) scale(1); */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.training-card:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--primary-color);
-  z-index: -1;
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform var(--transition-speed) ease;
-}
-
-.training-card:hover:before {
-  transform: scaleY(1);
+  border-bottom: 3px solid var(--accent-color);
+  border-left: 3px solid var(--accent-color);
 }
 
 .training-card-heading {
@@ -526,12 +516,6 @@ to { opacity: 1; transform: scale(1); }
   transition: color var(--transition-speed) ease;
 }
 
-.training-card:hover ul li {
-  color: white;
-}
-.training-card:hover p{
-  color: var(--primary-color);
-}
 .training-card:hover .training-card-heading {
   color: #ff9933;
 }
@@ -544,8 +528,7 @@ background-attachment: fixed;
 
 .research-grid {
 display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(2, 1fr);
+grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
 gap: 2rem;
 }
 
@@ -690,7 +673,7 @@ background-attachment: fixed;
 
 .research-impact-grid {
 display: grid;
-grid-template-columns: repeat(2, 1fr); /* Always two columns */
+grid-template-columns:repeat(auto-fit, minmax(400px, 1fr)); 
 gap: 2rem;
 margin-bottom: 2rem;
 }
