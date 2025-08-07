@@ -1,0 +1,359 @@
+/* Home Page Specific Styles */
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-main {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  background: none;
+  padding: 0;
+}
+
+.hero-main h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-main h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Notification Section */
+.notification-section {
+  background: linear-gradient(135deg, var(--primary-color), #2c5364);
+  padding: 2rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.notification-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.notification-title {
+  text-align: center;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.notification-scroll {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  gap: 2rem;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1rem;
+  min-width: 450px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.notification-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.notification-item:hover .notification-text strong {
+  color: #ffeb3b;
+}
+
+.notification-item img {
+  width: 80%;
+  height: 100px;
+  border-radius: 5%;
+  object-fit: cover;
+  margin-right: 1rem;
+  border: 2px solid var(--accent-color);
+}
+
+.notification-text {
+  color: white;
+  flex: 1;
+}
+
+.notification-text strong {
+  display: block;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.notification-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Hero Content Section (for section below hero, not the hero itself) */
+
+
+.hero-content-section {
+    margin: 0;
+    padding: 5rem 0;
+    background: #f8f9fa;
+    position: relative;
+    z-index: 1;
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #555;
+  line-height: 1.7;
+  padding: 0 1rem;
+}
+
+/* Mission Highlights */
+.mission-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+  padding: 0 1rem;
+}
+
+.highlight {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.highlight:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff7e00, #1a4b84);
+  transform: scaleX(0);
+  transition: transform var(--transition-speed) ease;
+}
+
+.highlight:hover:before {
+  transform: scaleX(1);
+}
+
+.highlight:hover {
+  transform: translateY(-15px) scale(1.05);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.highlight h3 {
+  color: #1a4b84;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.highlight p {
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary-color), #2c5364);
+  color: white;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design for Home */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding-top: 80px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  
+  .hero .container {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .hero-content {
+    padding: 3rem 0;
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+  
+  .mission-highlights {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 0.5rem;
+  }
+  
+  .highlight {
+    padding: 2rem;
+  }
+  
+  .notification-item {
+    min-width: 280px;
+    padding: 0.8rem;
+  }
+  
+  .notification-item img {
+    width: 80%;
+    height: 50px;
+  }
+  
+  .notification-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content h3 {
+    font-size: 1rem;
+  }
+  
+  .highlight {
+    padding: 1.5rem;
+  }
+  
+  .highlight h3 {
+    font-size: 1.2rem;
+  }
+  
+  .notification-item {
+    min-width: 250px;
+  }
+  
+  .notification-scroll {
+    animation: scroll 25s linear infinite;
+  }
+}

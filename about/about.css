@@ -1,0 +1,91 @@
+
+/* About Page Specific Styles */
+
+.page-header {
+  background: linear-gradient(rgba(26, 75, 132, 0.9), rgba(44, 83, 100, 0.9)), url("../assets/images/background_images/user_with_laptop.jpeg") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 150px 0 80px;
+  margin-top: 80px;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.background, .vision-mission {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-speed) ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.background.animate-in, .vision-mission.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.background:hover, .vision-mission:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.background h3, .vision-mission h3 {
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.vision-mission ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vision-mission ul li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.vision-mission ul li:before {
+  content: "✓";
+  color: var(--accent-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 120px 0 60px;
+  }
+  
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .background, .vision-mission {
+    padding: 2rem;
+  }
+}
