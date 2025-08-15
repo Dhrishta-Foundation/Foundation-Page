@@ -83,9 +83,10 @@
 }
 
 .notification-container {
-  max-width: 1200px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 0 1rem;
+  width: 100%;
 }
 
 .notification-title {
@@ -108,7 +109,7 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 1rem;
-  min-width: 450px;
+  min-width: 350px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease;
@@ -125,7 +126,7 @@
 }
 
 .notification-item img {
-  width: 80%;
+  width: 40%;
   height: 100px;
   border-radius: 5%;
   object-fit: cover;
